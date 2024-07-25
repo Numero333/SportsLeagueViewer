@@ -15,7 +15,7 @@ struct APIRequest {
     let query: String?
     
     func buildURL() -> URL? {
-        var components = URLComponents(string: baseUrl.rawValue + path.value)
+        var components = URLComponents(string: baseUrl.rawValue + APIKey.theSportDB + path.value)
         if let query = query {
             components?.queryItems = [
                 URLQueryItem(name: "l", value: query)
@@ -28,7 +28,7 @@ struct APIRequest {
 
 
 enum BaseUrl:String {
-    case theSportsDB  = "https://www.thesportsdb.com/api/v1/json/50130162/"
+    case theSportsDB  = "https://www.thesportsdb.com/api/v1/json/"
 }
 
 enum APIPath {
@@ -36,8 +36,8 @@ enum APIPath {
     
     var value: String {
         switch self {
-        case .allLeague: "all_leagues.php"
-        case .searchAllTeam: "search_all_teams.php"
+        case .allLeague: "/all_leagues.php/"
+        case .searchAllTeam: "/search_all_teams.php/"
         }
     }
 }

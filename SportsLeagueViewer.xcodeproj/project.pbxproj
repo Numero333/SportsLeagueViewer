@@ -28,6 +28,7 @@
 		74ACC3BD2C500768009AFF67 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3BC2C500768009AFF67 /* APIServiceProtocol.swift */; };
 		74ACC3BF2C50076E009AFF67 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3BE2C50076E009AFF67 /* APIError.swift */; };
 		74ACC3C12C500774009AFF67 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3C02C500774009AFF67 /* APIRequest.swift */; };
+		74D2144F2C512A9700B6AD30 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D2144E2C512A9700B6AD30 /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		74ACC3BC2C500768009AFF67 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		74ACC3BE2C50076E009AFF67 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		74ACC3C02C500774009AFF67 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		74D2144E2C512A9700B6AD30 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 				74ACC3BC2C500768009AFF67 /* APIServiceProtocol.swift */,
 				74ACC3BE2C50076E009AFF67 /* APIError.swift */,
 				74ACC3C02C500774009AFF67 /* APIRequest.swift */,
+				74D2144E2C512A9700B6AD30 /* APIKey.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			files = (
 				74ACC3BD2C500768009AFF67 /* APIServiceProtocol.swift in Sources */,
 				74ACC3BB2C500764009AFF67 /* APIService.swift in Sources */,
+				74D2144F2C512A9700B6AD30 /* APIKey.swift in Sources */,
 				74ACC3A62C5005E9009AFF67 /* LeagueRepository.swift in Sources */,
 				74ACC3932C500470009AFF67 /* Team.swift in Sources */,
 				74ACC3A82C5005F0009AFF67 /* LeagueRepositoryProtocol.swift in Sources */,

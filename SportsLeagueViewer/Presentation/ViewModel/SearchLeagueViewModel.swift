@@ -8,37 +8,33 @@
 import Foundation
 
 class SearchLeagueViewModel: ObservableObject {
+    
+    //MARK: - Properties
+    @Published var searchLeague = ""
+    @Published var baseLeagues = [League]()
+    @Published var teams = [Team]()
+    @Published var errorMessage: APIError?
+    @Published var showAlert = false
+    
     let getLeagueUseCase: GetLeagueUseCaseProtocol
     let getTeamUseCase: GetTeamUseCaseProtocol
+    
+    var leaguesResearched: [League] {
+        return baseLeagues.filter { league in
+            league.name.lowercased().contains(searchLeague.lowercased())
+        }
+    }
     
     init(getLeagueUseCase: GetLeagueUseCaseProtocol, getTeamUseCase: GetTeamUseCaseProtocol) {
         self.getLeagueUseCase = getLeagueUseCase
         self.getTeamUseCase = getTeamUseCase
-        
-        $searchLeague
-            .debounce(for: 0.1, scheduler: DispatchQueue.main)
-            .removeDuplicates()
-            .receive(on: DispatchQueue.main)
-            .map { [weak self] search in
-                self?.allLeagues.filter { league in
-                    league.name.lowercased().contains(search.lowercased())
-                } ?? []
-            }
-            .assign(to: &$leaguesResearch)
     }
-    
-    //MARK: - Properties
-    @Published var searchLeague = ""
-    @Published var allLeagues = [League]()
-    @Published var leaguesResearch = [League]()
-    @Published var teams = [Team]()
-    @Published var errorMessage: APIError?
     
     @MainActor
     func initializeLeagues() {
         Task {
             do {
-                self.allLeagues = try await getLeagueUseCase.execute()
+                self.baseLeagues = try await getLeagueUseCase.execute()
             } catch let error {
                 self.errorMessage = error as? APIError
             }
@@ -47,7 +43,6 @@ class SearchLeagueViewModel: ObservableObject {
     
     @MainActor
     func fetchTeam(for league: String) {
-        print("fetching teams")
         Task {
             do {
                 let fetchedTeams = try await getTeamUseCase.execute(query: league)

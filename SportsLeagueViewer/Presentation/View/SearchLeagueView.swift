@@ -10,9 +10,7 @@ import SwiftUI
 struct SearchLeagueView: View {
     
     @ObservedObject var viewModel: SearchLeagueViewModel
-    
-    @Environment(\.dismissSearch) private var dismissSearch
-    @Environment(\.isSearching) private var isSearching
+    @State var showAlert = false
     
     init() {
         let apiService = APIService()
@@ -32,13 +30,26 @@ struct SearchLeagueView: View {
                     TeamGridView(teams: viewModel.teams)
                 }
                 
-                LeagueSearchView(leagues: viewModel.leaguesResearch, action: viewModel.fetchTeam(for:))
+                LeagueSelectionView(leagues: viewModel.leaguesResearched, action: viewModel.fetchTeam(for:))
                     .searchable(text: $viewModel.searchLeague, prompt: "Search by league")
             }
             .onAppear {
                 viewModel.initializeLeagues()
             }
             .navigationTitle("Search League")
+            .onChange(of: viewModel.errorMessage) {
+                if viewModel.errorMessage?.description != nil {
+                    viewModel.showAlert.toggle()
+                }
+            }
+            .alert("Error",
+                   isPresented: $viewModel.showAlert) {
+                Button("OK") {
+                    viewModel.showAlert.toggle()
+                }
+            } message: {
+                Text(viewModel.errorMessage?.description ?? "Unknown error please try again")
+            }
         }
     }
 }
@@ -47,7 +58,7 @@ struct SearchLeagueView: View {
     SearchLeagueView()
 }
 
-struct LeagueSearchView: View {
+struct LeagueSelectionView: View {
     
     // Environment property to detect if the user is currently performing a search
     @Environment(\.isSearching) private var isSearching

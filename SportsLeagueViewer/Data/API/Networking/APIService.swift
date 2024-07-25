@@ -16,12 +16,12 @@ final class APIService: APIServiceProtocol {
     }
     
     func performRequest<T: Codable>(apiRequest: APIRequest, retries: Int = 3) async throws -> T {
-                
+        
         guard let url = apiRequest.buildURL() else { throw APIError.invalidUrl }
         
         var request = URLRequest(url: url)
         request.httpMethod = apiRequest.method.rawValue
-                
+        
         do {
             let (data, response) = try await urlSession.data(for: request)
             
@@ -37,16 +37,25 @@ final class APIService: APIServiceProtocol {
                 let decodedData = try JSONDecoder().decode(T.self, from: data)
                 return decodedData
             } catch {
-                print("error parsing data")
                 throw APIError.parsingError
             }
         } catch {
             if retries > 0 {
-                try await Task.sleep(nanoseconds: 1_000_000_000)
+                await delay(seconds: 1)
                 return try await performRequest(apiRequest: apiRequest, retries: retries - 1)
+                
             } else {
                 throw APIError.unknownError
             }
         }
     }
+    
+    private func delay(seconds: TimeInterval) async {
+        await withCheckedContinuation { continuation in
+            DispatchQueue.global().asyncAfter(deadline: .now() + seconds) {
+                continuation.resume()
+            }
+        }
+    }
+    
 }
