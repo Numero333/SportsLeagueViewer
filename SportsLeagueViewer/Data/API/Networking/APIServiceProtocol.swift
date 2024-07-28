@@ -7,8 +7,6 @@
 
 import Foundation
 
-protocol APIServiceProtocol {
-    var urlSession: URLSession { get }
-    
+protocol APIServiceProtocol {    
     func performRequest<T: Codable>(apiRequest: APIRequest, retries: Int) async throws -> T
 }

@@ -45,7 +45,7 @@ final class APIService: APIServiceProtocol {
                 return try await performRequest(apiRequest: apiRequest, retries: retries - 1)
                 
             } else {
-                throw APIError.unknownError
+                throw error
             }
         }
     }

@@ -10,17 +10,6 @@ import SwiftUI
 struct SearchLeagueView: View {
     
     @ObservedObject var viewModel: SearchLeagueViewModel
-    @State var showAlert = false
-    
-    init() {
-        let apiService = APIService()
-        let leagueRepository = LeagueRepository(apiService: apiService)
-        let teamRepository = TeamRepository(apiService: APIService())
-        let getLeagueUseCase = GetLeagueUseCase(leagueRepository: leagueRepository)
-        let getTeamUseCase = GetTeamUseCase(teamRepository: teamRepository)
-        
-        self.viewModel = SearchLeagueViewModel(getLeagueUseCase: getLeagueUseCase, getTeamUseCase: getTeamUseCase)
-    }
     
     var body: some View {
         NavigationStack {
@@ -55,7 +44,12 @@ struct SearchLeagueView: View {
 }
 
 #Preview {
-    SearchLeagueView()
+    SearchLeagueView(
+        viewModel: SearchLeagueViewModel(
+            getLeagueUseCase: GetLeagueUseCase(),
+            getTeamUseCase: GetTeamUseCase()
+        )
+    )
 }
 
 struct LeagueSelectionView: View {

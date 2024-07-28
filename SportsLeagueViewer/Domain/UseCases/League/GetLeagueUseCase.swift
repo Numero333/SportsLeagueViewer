@@ -11,7 +11,7 @@ class GetLeagueUseCase: GetLeagueUseCaseProtocol {
     
     let leagueRepository: LeagueRepositoryProtocol
     
-    init(leagueRepository: LeagueRepositoryProtocol) {
+    init(leagueRepository: LeagueRepositoryProtocol = LeagueRepository()) {
         self.leagueRepository = leagueRepository
     }
     

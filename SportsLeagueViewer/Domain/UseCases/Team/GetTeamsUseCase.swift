@@ -11,7 +11,7 @@ class GetTeamUseCase: GetTeamUseCaseProtocol {
     
     let teamRepository: TeamRepositoryProtocol
     
-    init(teamRepository: TeamRepositoryProtocol) {
+    init(teamRepository: TeamRepositoryProtocol = TeamRepository()) {
         self.teamRepository = teamRepository
     }
     

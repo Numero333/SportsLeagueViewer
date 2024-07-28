@@ -26,7 +26,6 @@ struct APIRequest {
     
 }
 
-
 enum BaseUrl:String {
     case theSportsDB  = "https://www.thesportsdb.com/api/v1/json/"
 }

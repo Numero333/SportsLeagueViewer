@@ -15,12 +15,4 @@ struct TeamDTO: Codable {
     let idTeam: String
     let strTeam: String
     let strBadge: String
-    
-    func toTeamEntity() -> Team {
-        return Team(
-            id: idTeam,
-            name: strTeam,
-            badge: strBadge
-        )
-    }
 }

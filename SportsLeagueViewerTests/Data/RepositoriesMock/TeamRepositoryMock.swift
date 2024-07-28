@@ -1,26 +1,26 @@
 //
-//  TeamRepository.swift
-//  SportsLeagueViewer
+//  TeamRepositoryMock.swift
+//  SportsLeagueViewerTests
 //
-//  Created by François-Xavier on 23/07/2024.
+//  Created by François-Xavier on 28/07/2024.
 //
 
 import Foundation
+@testable import SportsLeagueViewer
 
-class TeamRepository: TeamRepositoryProtocol {
+class TeamRepositoryMock: TeamRepositoryProtocol {
     
     private let apiService: APIServiceProtocol
     
-    init(apiService: APIServiceProtocol = APIService()) {
+    init(apiService: APIServiceProtocol = APIServiceMock(ressources: .allTeams)) {
         self.apiService = apiService
     }
     
-    func fetch(query: String) async throws -> [Team] {
+    func fetch(query: String) async throws -> [SportsLeagueViewer.Team] {
         let apiRequest = APIRequest(baseUrl: .theSportsDB, path: .searchAllTeam, method: .get, query: query)
         let teamsResponse: TeamResponse = try await apiService.performRequest(apiRequest: apiRequest, retries: 3)
         return teamsResponse.teams.map {
             TeamMapper.map(dto: $0)
         }
     }
-    
 }

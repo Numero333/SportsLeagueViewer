@@ -14,11 +14,4 @@ struct LeagueResponse: Codable {
 struct LeagueDTO: Codable {
     let idLeague: String
     let strLeague: String
-    
-    func toLeagueEntity() -> League {
-        return League(
-            id: idLeague,
-            name: strLeague
-        )
-    }
 }
