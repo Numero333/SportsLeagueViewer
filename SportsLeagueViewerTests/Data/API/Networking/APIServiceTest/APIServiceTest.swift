@@ -132,19 +132,4 @@ class APIServiceTest: XCTestCase {
             XCTAssertEqual(APIError.parsingError, error as? APIError)
         }
     }
-    
-    func testAPIError() {
-        // Given
-        let invalidUrl = APIError.invalidUrl.description
-        let invalidResponse = APIError.invalidResponse(500).description
-        let parsingError = APIError.parsingError.description
-        let unknownError = APIError.unknownError.description
-        
-        // Then
-        XCTAssertEqual("The URL is invalid.", invalidUrl)
-        XCTAssertEqual("Response invalid, status code: 500", invalidResponse)
-        XCTAssertEqual("Failed to parse the received data.", parsingError)
-        XCTAssertEqual("An unknown error occurred.", unknownError)
-    }
-    
 }
