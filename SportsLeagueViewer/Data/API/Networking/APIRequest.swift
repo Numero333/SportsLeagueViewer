@@ -9,11 +9,13 @@ import Foundation
 
 struct APIRequest {
     
+    // MARK: - Properties
     let baseUrl: BaseUrl
     let path: APIPath
     let method: HTTPMethod
     let query: String?
     
+    // MARK: - Accessible
     func buildURL() -> URL? {
         var components = URLComponents(string: baseUrl.rawValue + APIKey.theSportDB + path.value)
         if let query = query {

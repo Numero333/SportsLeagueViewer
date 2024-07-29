@@ -9,12 +9,15 @@ import Foundation
 
 final class APIService: APIServiceProtocol {
     
+    // MARK: - Properties
     let urlSession: URLSession
     
+    // MARK: - Properties
     init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession
     }
     
+    // MARK: - Accessible
     func performRequest<T: Codable>(apiRequest: APIRequest, retries: Int = 3) async throws -> T {
         
         guard let url = apiRequest.buildURL() else { throw APIError.invalidUrl }

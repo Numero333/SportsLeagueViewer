@@ -13,8 +13,10 @@ protocol AppDIProtocol {
 
 class AppDI: AppDIProtocol {
     
+    // MARK: - Properties
     static let shared = AppDI()
     
+    // MARK: - Accessible
     func createSearchLeagueViewModel() -> SearchLeagueViewModel {
         let viewModel = SearchLeagueViewModel(
             getLeagueUseCase: GetLeagueUseCase(),

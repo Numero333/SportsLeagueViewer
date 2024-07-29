@@ -11,10 +11,11 @@ class SearchLeagueViewModel: ObservableObject {
     
     //MARK: - Properties
     @Published var searchLeague = ""
-    @Published var baseLeagues = [League]()
     @Published var teams = [Team]()
     @Published var errorMessage: APIError?
     @Published var showAlert = false
+    
+    var baseLeagues = [League]()
     
     let getLeagueUseCase: GetLeagueUseCaseProtocol
     let getTeamUseCase: GetTeamUseCaseProtocol
@@ -25,11 +26,13 @@ class SearchLeagueViewModel: ObservableObject {
         }
     }
     
+    // MARK: - Initializers
     init(getLeagueUseCase: GetLeagueUseCaseProtocol, getTeamUseCase: GetTeamUseCaseProtocol) {
         self.getLeagueUseCase = getLeagueUseCase
         self.getTeamUseCase = getTeamUseCase
     }
     
+    // MARK: - Accessible
     @MainActor
     func initializeLeagues() {
         Task {
@@ -53,6 +56,7 @@ class SearchLeagueViewModel: ObservableObject {
         }
     }
     
+    // MARK: - Private
     private func sorting(for teams: [Team]) -> [Team] {
         let filteredTeams = filterOneInTwoTeam(for: teams)
         return reverseAlphabeticalOrder(for: filteredTeams)

@@ -42,6 +42,8 @@
 		74EB28F12C56AB6F002282B5 /* TeamRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB28F02C56AB6F002282B5 /* TeamRepositoryMock.swift */; };
 		74FAD6222C56BD9E00A00AC6 /* TeamMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAD6212C56BD9E00A00AC6 /* TeamMapper.swift */; };
 		74FAD6242C56BDB000A00AC6 /* LeagueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAD6232C56BDB000A00AC6 /* LeagueMapper.swift */; };
+		74FAD6282C56E05600A00AC6 /* GetLeagueUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAD6272C56E05600A00AC6 /* GetLeagueUseCaseTest.swift */; };
+		74FAD62A2C56E1E700A00AC6 /* GetTeamUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAD6292C56E1E700A00AC6 /* GetTeamUseCaseTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		74EB28F02C56AB6F002282B5 /* TeamRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRepositoryMock.swift; sourceTree = "<group>"; };
 		74FAD6212C56BD9E00A00AC6 /* TeamMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMapper.swift; sourceTree = "<group>"; };
 		74FAD6232C56BDB000A00AC6 /* LeagueMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueMapper.swift; sourceTree = "<group>"; };
+		74FAD6272C56E05600A00AC6 /* GetLeagueUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLeagueUseCaseTest.swift; sourceTree = "<group>"; };
+		74FAD6292C56E1E700A00AC6 /* GetTeamUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTeamUseCaseTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,7 +375,7 @@
 		74EB28EC2C56A9BA002282B5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				74EB28E62C569F45002282B5 /* UseCasesMock */,
+				74FAD6252C56DA6500A00AC6 /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -401,6 +405,24 @@
 				74EB28DA2C565F7E002282B5 /* AllTeams.json */,
 			);
 			path = Ressources;
+			sourceTree = "<group>";
+		};
+		74FAD6252C56DA6500A00AC6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				74FAD6262C56DA7100A00AC6 /* UseCasesTest */,
+				74EB28E62C569F45002282B5 /* UseCasesMock */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		74FAD6262C56DA7100A00AC6 /* UseCasesTest */ = {
+			isa = PBXGroup;
+			children = (
+				74FAD6272C56E05600A00AC6 /* GetLeagueUseCaseTest.swift */,
+				74FAD6292C56E1E700A00AC6 /* GetTeamUseCaseTest.swift */,
+			);
+			path = UseCasesTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,9 +562,11 @@
 				74EB28E52C569E1D002282B5 /* LeagueRepositoryMock.swift in Sources */,
 				74EB28E82C569F66002282B5 /* GetLeagueUseCaseMock.swift in Sources */,
 				74EB28F12C56AB6F002282B5 /* TeamRepositoryMock.swift in Sources */,
+				74FAD62A2C56E1E700A00AC6 /* GetTeamUseCaseTest.swift in Sources */,
 				74EB28D72C565EF4002282B5 /* FakeURLSessionProtocol.swift in Sources */,
 				74EB28DD2C567CD3002282B5 /* SearchLeagueViewModelTest.swift in Sources */,
 				74EB28EA2C56A96B002282B5 /* GetTeamUseCaseMock.swift in Sources */,
+				74FAD6282C56E05600A00AC6 /* GetLeagueUseCaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

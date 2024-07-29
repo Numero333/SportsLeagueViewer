@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct SportsLeagueViewerApp: App {
     
+    // MARK: - Properties
     @StateObject var searchLeagueViewModel = AppDI.shared.createSearchLeagueViewModel()
     
     var body: some Scene {

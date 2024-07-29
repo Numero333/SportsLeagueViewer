@@ -10,12 +10,15 @@ import Foundation
 
 class TeamRepositoryMock: TeamRepositoryProtocol {
     
+    // MARK: - Properties
     private let apiService: APIServiceProtocol
     
+    // MARK: - Initializers
     init(apiService: APIServiceProtocol = APIServiceMock(ressources: .allTeams)) {
         self.apiService = apiService
     }
     
+    // MARK: - Accessible
     func fetch(query: String) async throws -> [SportsLeagueViewer.Team] {
         let apiRequest = APIRequest(baseUrl: .theSportsDB, path: .searchAllTeam, method: .get, query: query)
         let teamsResponse: TeamResponse = try await apiService.performRequest(apiRequest: apiRequest, retries: 3)

@@ -9,8 +9,10 @@ import SwiftUI
 
 struct SearchLeagueView: View {
     
+    // MARK: - Properties
     @ObservedObject var viewModel: SearchLeagueViewModel
     
+    // MARK: - Main View
     var body: some View {
         NavigationStack {
             ZStack {
@@ -52,6 +54,7 @@ struct SearchLeagueView: View {
     )
 }
 
+// MARK: - Subviews - LeagueSelectionView
 struct LeagueSelectionView: View {
     
     // Environment property to detect if the user is currently performing a search
@@ -77,6 +80,7 @@ struct LeagueSelectionView: View {
     }
 }
 
+// MARK: - Subviews - TeamGridView
 struct TeamGridView: View {
     
     let teams: [Team]

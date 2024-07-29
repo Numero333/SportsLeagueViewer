@@ -10,10 +10,12 @@ import XCTest
 
 final class SearchLeagueViewModelTest: XCTestCase {
     
-    private var getLeagueUseCase: GetLeagueUseCaseMock!
-    private var getTeamsUseCase: GetTeamUseCaseMock!
+    // MARK: - Properties
+    private var getLeagueUseCase: GetLeagueUseCaseProtocol!
+    private var getTeamsUseCase: GetTeamUseCaseProtocol!
     private var viewModel: SearchLeagueViewModel!
     
+    // MARK: - Override
     override func setUp() {
         super.setUp()
         self.getLeagueUseCase = GetLeagueUseCaseMock()
@@ -21,7 +23,14 @@ final class SearchLeagueViewModelTest: XCTestCase {
         self.viewModel = SearchLeagueViewModel(getLeagueUseCase: getLeagueUseCase, getTeamUseCase: getTeamsUseCase)
     }
     
+    override func tearDown() {
+        super.tearDown()
+        self.getLeagueUseCase = nil
+        self.getTeamsUseCase = nil
+        self.viewModel = nil
+    }
     
+    // MARK: - Tests
     func testFetchingBaseLeagues() async {
         let expectation = expectation(description: "Fetch League should complete")
         
@@ -34,9 +43,8 @@ final class SearchLeagueViewModelTest: XCTestCase {
         await fulfillment(of: [expectation], timeout: 5)
         
         // Then
-        XCTAssertEqual("English Premier League", viewModel.baseLeagues.first!.name)
+        XCTAssertEqual("English Premier League", viewModel.baseLeagues.first?.name)
         XCTAssertNotNil(viewModel.baseLeagues)
-        
     }
     
     func testFetchTeams() async {
@@ -51,8 +59,6 @@ final class SearchLeagueViewModelTest: XCTestCase {
         await fulfillment(of: [expectation], timeout: 5)
         
         // Then
-        XCTAssertEqual("Angers", viewModel.teams.last!.name)
-        
+        XCTAssertEqual("Angers", viewModel.teams.last?.name)
     }
-    
 }

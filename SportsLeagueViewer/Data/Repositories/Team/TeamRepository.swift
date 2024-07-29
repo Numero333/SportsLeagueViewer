@@ -9,12 +9,15 @@ import Foundation
 
 class TeamRepository: TeamRepositoryProtocol {
     
+    // MARK: - Properties
     private let apiService: APIServiceProtocol
     
+    // MARK: - Initializers
     init(apiService: APIServiceProtocol = APIService()) {
         self.apiService = apiService
     }
     
+    // MARK: - Accessible
     func fetch(query: String) async throws -> [Team] {
         let apiRequest = APIRequest(baseUrl: .theSportsDB, path: .searchAllTeam, method: .get, query: query)
         let teamsResponse: TeamResponse = try await apiService.performRequest(apiRequest: apiRequest, retries: 3)

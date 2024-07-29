@@ -10,6 +10,7 @@ import XCTest
 
 class APIServiceTest: XCTestCase {
     
+    // MARK: - Properties
     private var session: URLSession! = {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [FakeURLSessionProtocol.self]
@@ -25,6 +26,7 @@ class APIServiceTest: XCTestCase {
     
     private var url: URL! =  URL(string: "test.com")
     
+    // MARK: - Tests
     func testAPIRequestWithCorrectResponse() async throws {
     
         // Given
@@ -37,7 +39,7 @@ class APIServiceTest: XCTestCase {
         
         // When
         do {
-            let leagues: LeagueResponse = try await apiService.performRequest(
+            let _ : LeagueResponse = try await apiService.performRequest(
                 apiRequest: APIRequest(
                     baseUrl: .theSportsDB,
                     path: .allLeague,
@@ -63,7 +65,7 @@ class APIServiceTest: XCTestCase {
         
         // When
         do {
-            let leagues: LeagueResponse = try await apiService.performRequest(
+            let _ : LeagueResponse = try await apiService.performRequest(
                 apiRequest: APIRequest(
                     baseUrl: .theSportsDB,
                     path: .allLeague,
@@ -117,7 +119,7 @@ class APIServiceTest: XCTestCase {
         
         // When
         do {
-            let leagues: LeagueResponse = try await apiService.performRequest(
+            let _ : LeagueResponse = try await apiService.performRequest(
                 apiRequest: APIRequest(
                     baseUrl: .theSportsDB,
                     path: .allLeague,

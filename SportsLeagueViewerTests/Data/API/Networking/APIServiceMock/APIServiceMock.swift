@@ -22,12 +22,16 @@ enum MockRessources {
 }
 
 class APIServiceMock: APIServiceProtocol {
+    
+    // MARK: - Properties
     var ressources: MockRessources
     
+    // MARK: - Initializers
     init(ressources: MockRessources) {
         self.ressources = ressources
     }
     
+    // MARK: - Accessible
     func performRequest<T>(apiRequest: SportsLeagueViewer.APIRequest, retries: Int) async throws -> T where T : Decodable, T : Encodable {
         
         let bundle = Bundle(for: APIServiceTest.self)
