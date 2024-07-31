@@ -127,7 +127,7 @@
 		74ACC37E2C5003E8009AFF67 /* SportsLeagueViewer */ = {
 			isa = PBXGroup;
 			children = (
-				74EB28C22C5657C6002282B5 /* AppDI */,
+				74EB28C22C5657C6002282B5 /* DIContainer */,
 				74ACC3A12C50059C009AFF67 /* ApplicationLifeCycle */,
 				74ACC38D2C50044C009AFF67 /* Domain */,
 				74ACC39E2C500577009AFF67 /* Data */,
@@ -295,12 +295,12 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
-		74EB28C22C5657C6002282B5 /* AppDI */ = {
+		74EB28C22C5657C6002282B5 /* DIContainer */ = {
 			isa = PBXGroup;
 			children = (
 				74FAD62B2C5ACD6B00A00AC6 /* DIContainer.swift */,
 			);
-			path = AppDI;
+			path = DIContainer;
 			sourceTree = "<group>";
 		};
 		74EB28CA2C565C16002282B5 /* SportsLeagueViewerTests */ = {
