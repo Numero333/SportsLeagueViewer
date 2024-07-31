@@ -8,21 +8,32 @@
 import XCTest
 @testable import SportsLeagueViewer
 
+#warning("Switch les prrivate pour un setUp et tearDown")
+#warning("Conteneur d'injection de dépendance")
+
 class APIServiceTest: XCTestCase {
-    
+
     // MARK: - Properties
-    private var session: URLSession! = {
+    private var session: URLSession!
+
+    private var data: Data!
+
+    // MARK: - Override
+    override func setUp() {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [FakeURLSessionProtocol.self]
-        return URLSession(configuration: configuration)
-    }()
-    
-    private var data: Data! = {
+        self.session = URLSession(configuration: configuration)
+
         let bundle = Bundle(for: APIServiceTest.self)
         let url = bundle.url(forResource: "AllLeagues", withExtension: "json")
-        return try! Data(contentsOf: url!)
-    }()
-    
+        self.data = try! Data(contentsOf: url!)
+    }
+
+    override func tearDown() {
+        session = nil
+        data = nil
+    }
+
     
     private var url: URL! =  URL(string: "test.com")
     

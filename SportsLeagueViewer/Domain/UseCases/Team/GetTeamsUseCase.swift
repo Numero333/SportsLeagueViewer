@@ -7,7 +7,11 @@
 
 import Foundation
 
-class GetTeamUseCase: GetTeamUseCaseProtocol {
+protocol GetTeamUseCaseProtocol {
+    func execute(query: String) async throws -> [Team]
+}
+
+final class GetTeamUseCase: GetTeamUseCaseProtocol {
     
     // MARK: - Properties
     let teamRepository: TeamRepositoryProtocol

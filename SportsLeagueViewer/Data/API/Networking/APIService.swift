@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol APIServiceProtocol {
+    func performRequest<T: Decodable>(apiRequest: APIRequest, retries: Int) async throws -> T
+}
+
 final class APIService: APIServiceProtocol {
     
     // MARK: - Properties
@@ -18,7 +22,7 @@ final class APIService: APIServiceProtocol {
     }
     
     // MARK: - Accessible
-    func performRequest<T: Codable>(apiRequest: APIRequest, retries: Int = 3) async throws -> T {
+    func performRequest<T: Decodable>(apiRequest: APIRequest, retries: Int = 3) async throws -> T {
         
         guard let url = apiRequest.buildURL() else { throw APIError.invalidUrl }
         

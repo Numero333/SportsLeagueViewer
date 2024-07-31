@@ -7,8 +7,12 @@
 
 import Foundation
 
-class TeamRepository: TeamRepositoryProtocol {
-    
+protocol TeamRepositoryProtocol {
+    func fetch(query: String) async throws -> [Team]
+}
+
+final class TeamRepository: TeamRepositoryProtocol {
+
     // MARK: - Properties
     private let apiService: APIServiceProtocol
     

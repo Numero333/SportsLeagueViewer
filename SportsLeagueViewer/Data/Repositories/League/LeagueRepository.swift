@@ -7,7 +7,11 @@
 
 import Foundation
 
-class LeagueRepository: LeagueRepositoryProtocol {
+protocol LeagueRepositoryProtocol {
+    func fetch() async throws -> [League]
+}
+
+final class LeagueRepository: LeagueRepositoryProtocol {
     
     // MARK: - Properties
     private let apiService: APIServiceProtocol

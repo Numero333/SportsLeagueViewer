@@ -13,23 +13,17 @@
 		74ACC3912C50046B009AFF67 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3902C50046B009AFF67 /* League.swift */; };
 		74ACC3932C500470009AFF67 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3922C500470009AFF67 /* Team.swift */; };
 		74ACC3972C5004FF009AFF67 /* GetTeamsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3962C5004FF009AFF67 /* GetTeamsUseCase.swift */; };
-		74ACC3992C50050C009AFF67 /* GetTeamsUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3982C50050C009AFF67 /* GetTeamsUseCaseProtocol.swift */; };
 		74ACC39B2C500522009AFF67 /* GetLeagueUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC39A2C500522009AFF67 /* GetLeagueUseCase.swift */; };
-		74ACC39D2C500528009AFF67 /* GetLeagueUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC39C2C500528009AFF67 /* GetLeagueUseCaseProtocol.swift */; };
 		74ACC3A62C5005E9009AFF67 /* LeagueRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3A52C5005E9009AFF67 /* LeagueRepository.swift */; };
-		74ACC3A82C5005F0009AFF67 /* LeagueRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3A72C5005F0009AFF67 /* LeagueRepositoryProtocol.swift */; };
 		74ACC3AA2C50060C009AFF67 /* TeamRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3A92C50060C009AFF67 /* TeamRepository.swift */; };
-		74ACC3AC2C500611009AFF67 /* TeamRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3AB2C500611009AFF67 /* TeamRepositoryProtocol.swift */; };
 		74ACC3AE2C500630009AFF67 /* TeamDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3AD2C500630009AFF67 /* TeamDTO.swift */; };
 		74ACC3B02C500636009AFF67 /* LeagueDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3AF2C500636009AFF67 /* LeagueDTO.swift */; };
 		74ACC3B52C5006DA009AFF67 /* SearchLeagueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3B42C5006DA009AFF67 /* SearchLeagueView.swift */; };
 		74ACC3B82C500723009AFF67 /* SearchLeagueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3B72C500723009AFF67 /* SearchLeagueViewModel.swift */; };
 		74ACC3BB2C500764009AFF67 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3BA2C500764009AFF67 /* APIService.swift */; };
-		74ACC3BD2C500768009AFF67 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3BC2C500768009AFF67 /* APIServiceProtocol.swift */; };
 		74ACC3BF2C50076E009AFF67 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3BE2C50076E009AFF67 /* APIError.swift */; };
 		74ACC3C12C500774009AFF67 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ACC3C02C500774009AFF67 /* APIRequest.swift */; };
 		74D2144F2C512A9700B6AD30 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D2144E2C512A9700B6AD30 /* APIKey.swift */; };
-		74EB28C42C5657CD002282B5 /* AppDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB28C32C5657CD002282B5 /* AppDI.swift */; };
 		74EB28D52C565D4A002282B5 /* APIServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB28D42C565D4A002282B5 /* APIServiceTest.swift */; };
 		74EB28D72C565EF4002282B5 /* FakeURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB28D62C565EF4002282B5 /* FakeURLSessionProtocol.swift */; };
 		74EB28D92C565F65002282B5 /* AllLeagues.json in Resources */ = {isa = PBXBuildFile; fileRef = 74EB28D82C565F65002282B5 /* AllLeagues.json */; };
@@ -44,6 +38,7 @@
 		74FAD6242C56BDB000A00AC6 /* LeagueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAD6232C56BDB000A00AC6 /* LeagueMapper.swift */; };
 		74FAD6282C56E05600A00AC6 /* GetLeagueUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAD6272C56E05600A00AC6 /* GetLeagueUseCaseTest.swift */; };
 		74FAD62A2C56E1E700A00AC6 /* GetTeamUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAD6292C56E1E700A00AC6 /* GetTeamUseCaseTest.swift */; };
+		74FAD62C2C5ACD6B00A00AC6 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAD62B2C5ACD6B00A00AC6 /* DIContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,23 +59,17 @@
 		74ACC3902C50046B009AFF67 /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		74ACC3922C500470009AFF67 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		74ACC3962C5004FF009AFF67 /* GetTeamsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTeamsUseCase.swift; sourceTree = "<group>"; };
-		74ACC3982C50050C009AFF67 /* GetTeamsUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTeamsUseCaseProtocol.swift; sourceTree = "<group>"; };
 		74ACC39A2C500522009AFF67 /* GetLeagueUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLeagueUseCase.swift; sourceTree = "<group>"; };
-		74ACC39C2C500528009AFF67 /* GetLeagueUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLeagueUseCaseProtocol.swift; sourceTree = "<group>"; };
 		74ACC3A52C5005E9009AFF67 /* LeagueRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueRepository.swift; sourceTree = "<group>"; };
-		74ACC3A72C5005F0009AFF67 /* LeagueRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueRepositoryProtocol.swift; sourceTree = "<group>"; };
 		74ACC3A92C50060C009AFF67 /* TeamRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRepository.swift; sourceTree = "<group>"; };
-		74ACC3AB2C500611009AFF67 /* TeamRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRepositoryProtocol.swift; sourceTree = "<group>"; };
 		74ACC3AD2C500630009AFF67 /* TeamDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDTO.swift; sourceTree = "<group>"; };
 		74ACC3AF2C500636009AFF67 /* LeagueDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDTO.swift; sourceTree = "<group>"; };
 		74ACC3B42C5006DA009AFF67 /* SearchLeagueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLeagueView.swift; sourceTree = "<group>"; };
 		74ACC3B72C500723009AFF67 /* SearchLeagueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLeagueViewModel.swift; sourceTree = "<group>"; };
 		74ACC3BA2C500764009AFF67 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		74ACC3BC2C500768009AFF67 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		74ACC3BE2C50076E009AFF67 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		74ACC3C02C500774009AFF67 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		74D2144E2C512A9700B6AD30 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
-		74EB28C32C5657CD002282B5 /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
 		74EB28C92C565C16002282B5 /* SportsLeagueViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsLeagueViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74EB28D42C565D4A002282B5 /* APIServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTest.swift; sourceTree = "<group>"; };
 		74EB28D62C565EF4002282B5 /* FakeURLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeURLSessionProtocol.swift; sourceTree = "<group>"; };
@@ -96,6 +85,7 @@
 		74FAD6232C56BDB000A00AC6 /* LeagueMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueMapper.swift; sourceTree = "<group>"; };
 		74FAD6272C56E05600A00AC6 /* GetLeagueUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLeagueUseCaseTest.swift; sourceTree = "<group>"; };
 		74FAD6292C56E1E700A00AC6 /* GetTeamUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTeamUseCaseTest.swift; sourceTree = "<group>"; };
+		74FAD62B2C5ACD6B00A00AC6 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				74ACC39A2C500522009AFF67 /* GetLeagueUseCase.swift */,
-				74ACC39C2C500528009AFF67 /* GetLeagueUseCaseProtocol.swift */,
 			);
 			path = League;
 			sourceTree = "<group>";
@@ -196,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				74ACC3962C5004FF009AFF67 /* GetTeamsUseCase.swift */,
-				74ACC3982C50050C009AFF67 /* GetTeamsUseCaseProtocol.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -250,7 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				74ACC3A92C50060C009AFF67 /* TeamRepository.swift */,
-				74ACC3AB2C500611009AFF67 /* TeamRepositoryProtocol.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -259,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				74ACC3A52C5005E9009AFF67 /* LeagueRepository.swift */,
-				74ACC3A72C5005F0009AFF67 /* LeagueRepositoryProtocol.swift */,
 			);
 			path = League;
 			sourceTree = "<group>";
@@ -293,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				74ACC3BA2C500764009AFF67 /* APIService.swift */,
-				74ACC3BC2C500768009AFF67 /* APIServiceProtocol.swift */,
 				74ACC3BE2C50076E009AFF67 /* APIError.swift */,
 				74ACC3C02C500774009AFF67 /* APIRequest.swift */,
 				74D2144E2C512A9700B6AD30 /* APIKey.swift */,
@@ -313,7 +298,7 @@
 		74EB28C22C5657C6002282B5 /* AppDI */ = {
 			isa = PBXGroup;
 			children = (
-				74EB28C32C5657CD002282B5 /* AppDI.swift */,
+				74FAD62B2C5ACD6B00A00AC6 /* DIContainer.swift */,
 			);
 			path = AppDI;
 			sourceTree = "<group>";
@@ -527,28 +512,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74ACC3BD2C500768009AFF67 /* APIServiceProtocol.swift in Sources */,
 				74FAD6222C56BD9E00A00AC6 /* TeamMapper.swift in Sources */,
 				74FAD6242C56BDB000A00AC6 /* LeagueMapper.swift in Sources */,
 				74ACC3BB2C500764009AFF67 /* APIService.swift in Sources */,
 				74D2144F2C512A9700B6AD30 /* APIKey.swift in Sources */,
 				74ACC3A62C5005E9009AFF67 /* LeagueRepository.swift in Sources */,
 				74ACC3932C500470009AFF67 /* Team.swift in Sources */,
-				74ACC3A82C5005F0009AFF67 /* LeagueRepositoryProtocol.swift in Sources */,
-				74EB28C42C5657CD002282B5 /* AppDI.swift in Sources */,
-				74ACC3992C50050C009AFF67 /* GetTeamsUseCaseProtocol.swift in Sources */,
 				74ACC3972C5004FF009AFF67 /* GetTeamsUseCase.swift in Sources */,
 				74ACC3BF2C50076E009AFF67 /* APIError.swift in Sources */,
 				74ACC3B02C500636009AFF67 /* LeagueDTO.swift in Sources */,
 				74ACC3AA2C50060C009AFF67 /* TeamRepository.swift in Sources */,
 				74ACC3AE2C500630009AFF67 /* TeamDTO.swift in Sources */,
 				74ACC39B2C500522009AFF67 /* GetLeagueUseCase.swift in Sources */,
-				74ACC3AC2C500611009AFF67 /* TeamRepositoryProtocol.swift in Sources */,
 				74ACC3B82C500723009AFF67 /* SearchLeagueViewModel.swift in Sources */,
 				74ACC3912C50046B009AFF67 /* League.swift in Sources */,
 				74ACC3802C5003E8009AFF67 /* SportsLeagueViewerApp.swift in Sources */,
-				74ACC39D2C500528009AFF67 /* GetLeagueUseCaseProtocol.swift in Sources */,
 				74ACC3C12C500774009AFF67 /* APIRequest.swift in Sources */,
+				74FAD62C2C5ACD6B00A00AC6 /* DIContainer.swift in Sources */,
 				74ACC3B52C5006DA009AFF67 /* SearchLeagueView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

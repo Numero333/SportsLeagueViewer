@@ -9,13 +9,21 @@ import SwiftUI
 
 @main
 struct SportsLeagueViewerApp: App {
-    
-    // MARK: - Properties
-    @StateObject var searchLeagueViewModel = AppDI.shared.createSearchLeagueViewModel()
-    
+
+    init() {
+        DIContainer.shared.register(
+            service: GetLeagueUseCase(),
+            for: GetLeagueUseCaseProtocol.self
+        )
+        DIContainer.shared.register(
+            service: GetTeamUseCase(),
+            for: GetTeamUseCaseProtocol.self
+        )
+    }
+
     var body: some Scene {
         WindowGroup {
-            SearchLeagueView(viewModel: searchLeagueViewModel)
+            SearchLeagueView()
         }
     }
 }

@@ -7,7 +7,12 @@
 
 import Foundation
 
-class GetLeagueUseCase: GetLeagueUseCaseProtocol {
+protocol GetLeagueUseCaseProtocol {
+    func execute() async throws -> [League]
+}
+
+
+final class GetLeagueUseCase: GetLeagueUseCaseProtocol {
     
     // MARK: - Properties
     let leagueRepository: LeagueRepositoryProtocol

@@ -22,7 +22,7 @@ enum MockRessources {
 }
 
 class APIServiceMock: APIServiceProtocol {
-    
+
     // MARK: - Properties
     var ressources: MockRessources
     
@@ -32,8 +32,8 @@ class APIServiceMock: APIServiceProtocol {
     }
     
     // MARK: - Accessible
-    func performRequest<T>(apiRequest: SportsLeagueViewer.APIRequest, retries: Int) async throws -> T where T : Decodable, T : Encodable {
-        
+    func performRequest<T>(apiRequest: SportsLeagueViewer.APIRequest, retries: Int) async throws -> T where T : Decodable {
+
         let bundle = Bundle(for: APIServiceTest.self)
         let url = bundle.url(forResource: ressources.description, withExtension: "json")
         let data = try! Data(contentsOf: url!)

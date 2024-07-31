@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct TeamResponse: Codable {
+struct TeamResponse: Decodable {
     let teams: [TeamDTO]
 }
 
-struct TeamDTO: Codable {
+struct TeamDTO: Decodable {
     let idTeam: String
     let strTeam: String
     let strBadge: String
