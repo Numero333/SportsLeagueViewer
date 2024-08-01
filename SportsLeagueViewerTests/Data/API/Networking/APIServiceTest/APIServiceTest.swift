@@ -8,9 +8,6 @@
 import XCTest
 @testable import SportsLeagueViewer
 
-#warning("Switch les prrivate pour un setUp et tearDown")
-#warning("Conteneur d'injection de dépendance")
-
 class APIServiceTest: XCTestCase {
 
     // MARK: - Properties

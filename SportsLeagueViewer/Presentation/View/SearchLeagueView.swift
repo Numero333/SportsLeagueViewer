@@ -10,7 +10,16 @@ import SwiftUI
 struct SearchLeagueView: View {
 
     // MARK: - Properties
-    @ObservedObject var viewModel = SearchLeagueViewModel()
+//    @ObservedObject var viewModel = SearchLeagueViewModel()
+
+    @StateObject private var viewModel = SearchLeagueViewModel(
+        getLeagueUseCase: DIContainer.shared.resolve(
+            type: GetLeagueUseCaseProtocol.self
+        ),
+        getTeamUseCase: DIContainer.shared.resolve(
+            type: GetTeamUseCaseProtocol.self
+        )
+        )
 
     // MARK: - Main View
     var body: some View {

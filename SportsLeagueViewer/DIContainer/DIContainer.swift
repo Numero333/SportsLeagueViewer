@@ -26,9 +26,12 @@ class DIContainer {
         services[key] = service
     }
 
-    func resolve<T>(type: T.Type) -> T? {
+    func resolve<T>(type: T.Type) -> T {
         let key = String(describing: type)
-       return services[key] as? T
+        guard let service = services[key] as? T else {
+            fatalError("Service not registered for type \(type)")
+        }
+        return service
     }
 
     // Maybe delete this because you will not use it in this test

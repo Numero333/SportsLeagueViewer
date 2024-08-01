@@ -27,8 +27,8 @@ class SearchLeagueViewModel: ObservableObject {
     }
 
     // MARK: - Initializers
-    init(getLeagueUseCase: GetLeagueUseCaseProtocol = DIContainer.shared.resolve(type: GetLeagueUseCaseProtocol.self)!,
-         getTeamUseCase: GetTeamUseCaseProtocol = DIContainer.shared.resolve(type: GetTeamUseCaseProtocol.self)!) {
+    init(getLeagueUseCase: GetLeagueUseCaseProtocol,
+         getTeamUseCase: GetTeamUseCaseProtocol) {
         self.getLeagueUseCase = getLeagueUseCase
         self.getTeamUseCase = getTeamUseCase
     }
