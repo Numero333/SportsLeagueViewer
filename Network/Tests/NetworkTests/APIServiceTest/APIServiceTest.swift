@@ -6,9 +6,9 @@
 //
 
 import XCTest
-@testable import SportsLeagueViewer
+@testable import Network
 
-class APIServiceTest: XCTestCase {
+final class APIServiceTest: XCTestCase {
 
     // MARK: - Properties
     private var session: URLSession!
@@ -21,8 +21,9 @@ class APIServiceTest: XCTestCase {
         configuration.protocolClasses = [FakeURLSessionProtocol.self]
         self.session = URLSession(configuration: configuration)
 
-        let bundle = Bundle(for: APIServiceTest.self)
+        let bundle =  Bundle.module
         let url = bundle.url(forResource: "AllLeagues", withExtension: "json")
+        dump(bundle.bundleURL)
         self.data = try! Data(contentsOf: url!)
     }
 

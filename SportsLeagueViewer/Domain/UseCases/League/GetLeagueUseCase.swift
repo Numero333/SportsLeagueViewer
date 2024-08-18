@@ -20,7 +20,6 @@ final class GetLeagueUseCase: GetLeagueUseCaseProtocol {
     // MARK: - Initializers
     init(leagueRepository: LeagueRepositoryProtocol = LeagueRepository()) {
         self.leagueRepository = leagueRepository
-        print("init")
     }
     
     // MARK: - Accessible

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Network
 
 protocol TeamRepositoryProtocol {
     func fetch(query: String) async throws -> [Team]

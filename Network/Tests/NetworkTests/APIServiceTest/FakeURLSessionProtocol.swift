@@ -7,19 +7,19 @@
 
 import Foundation
 
-class FakeURLSessionProtocol: URLProtocol {
-    
+public class FakeURLSessionProtocol: URLProtocol {
+
     static var loadingData: (() -> (HTTPURLResponse?, Data?))?
     
-    override class func canInit(with request: URLRequest) -> Bool {
+    override public class func canInit(with request: URLRequest) -> Bool {
         true
     }
     
-    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+    override public class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
     
-    override func startLoading() {
+    override public func startLoading() {
         let handler = FakeURLSessionProtocol.loadingData!
         let (response, data) = handler()
         
@@ -36,7 +36,7 @@ class FakeURLSessionProtocol: URLProtocol {
         client?.urlProtocolDidFinishLoading(self)
     }
     
-    override func stopLoading() {
+    override public func stopLoading() {
         
     }
     

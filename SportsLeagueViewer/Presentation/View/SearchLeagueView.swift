@@ -10,8 +10,6 @@ import SwiftUI
 struct SearchLeagueView: View {
 
     // MARK: - Properties
-//    @ObservedObject var viewModel = SearchLeagueViewModel()
-
     @StateObject private var viewModel = SearchLeagueViewModel(
         getLeagueUseCase: DIContainer.shared.resolve(
             type: GetLeagueUseCaseProtocol.self
@@ -37,7 +35,7 @@ struct SearchLeagueView: View {
                 viewModel.initializeLeagues()
             }
             .navigationTitle("Search League")
-            .onChange(of: viewModel.errorMessage) {
+            .onChange(of: viewModel.errorMessage) { _ in
                 if viewModel.errorMessage?.description != nil {
                     viewModel.showAlert.toggle()
                 }

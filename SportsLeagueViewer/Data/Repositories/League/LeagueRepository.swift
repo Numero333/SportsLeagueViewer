@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Network
 
 protocol LeagueRepositoryProtocol {
     func fetch() async throws -> [League]

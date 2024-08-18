@@ -7,16 +7,23 @@
 
 import Foundation
 
-struct APIRequest {
+public struct APIRequest {
     
     // MARK: - Properties
     let baseUrl: BaseUrl
     let path: APIPath
     let method: HTTPMethod
     let query: String?
-    
+
+    public init(baseUrl: BaseUrl, path: APIPath, method: HTTPMethod, query: String?) {
+        self.baseUrl = baseUrl
+        self.path = path
+        self.method = method
+        self.query = query
+    }
+
     // MARK: - Accessible
-    func buildURL() -> URL? {
+    public func buildURL() -> URL? {
         var components = URLComponents(string: baseUrl.rawValue + APIKey.theSportDB + path.value)
         if let query = query {
             components?.queryItems = [
@@ -28,11 +35,11 @@ struct APIRequest {
     
 }
 
-enum BaseUrl:String {
+public enum BaseUrl:String {
     case theSportsDB  = "https://www.thesportsdb.com/api/v1/json/"
 }
 
-enum APIPath {
+public enum APIPath {
     case allLeague, searchAllTeam
     
     var value: String {
@@ -43,6 +50,6 @@ enum APIPath {
     }
 }
 
-enum HTTPMethod: String {
+public enum HTTPMethod: String {
     case get = "GET"
 }

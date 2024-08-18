@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum APIKey {
+public enum APIKey {
     static let theSportDB = "50130162"
 }

@@ -6,12 +6,11 @@
 //
 
 import Foundation
-@testable import SportsLeagueViewer
 
-enum MockRessources {
+public enum MockRessources {
     case allLeagues, allTeams
     
-    var description: String {
+    public var description: String {
         switch self {
         case .allLeagues:
             "AllLeagues"
@@ -21,25 +20,23 @@ enum MockRessources {
     }
 }
 
-class APIServiceMock: APIServiceProtocol {
+public class APIServiceMock: APIServiceProtocol {
 
     // MARK: - Properties
     var ressources: MockRessources
     
     // MARK: - Initializers
-    init(ressources: MockRessources) {
+    public init(ressources: MockRessources) {
         self.ressources = ressources
     }
     
     // MARK: - Accessible
-    func performRequest<T>(apiRequest: SportsLeagueViewer.APIRequest, retries: Int) async throws -> T where T : Decodable {
+    public func performRequest<T>(apiRequest: APIRequest, retries: Int) async throws -> T where T : Decodable {
 
-        let bundle = Bundle(for: APIServiceTest.self)
+        let bundle = Bundle.module
         let url = bundle.url(forResource: ressources.description, withExtension: "json")
         let data = try! Data(contentsOf: url!)
         let decodedData = try JSONDecoder().decode(T.self, from: data)
         return decodedData
     }
-    
-    
 }

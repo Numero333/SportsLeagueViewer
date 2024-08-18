@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Network
 @testable import SportsLeagueViewer
 
 class TeamRepositoryMock: TeamRepositoryProtocol {

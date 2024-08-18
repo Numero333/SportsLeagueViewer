@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum APIError: Error, Equatable {
+public enum APIError: Error, Equatable {
     case invalidUrl
     case invalidResponse(Int)
     case parsingError
     case unknownError
     
-    var description: String {
+    public var description: String {
         switch self {
         case .invalidUrl: return "The URL is invalid."
         case .invalidResponse(let statusCode): return "Response invalid, status code: \(statusCode)"

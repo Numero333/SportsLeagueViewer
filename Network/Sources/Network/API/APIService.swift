@@ -7,23 +7,23 @@
 
 import Foundation
 
-protocol APIServiceProtocol {
+public protocol APIServiceProtocol {
     func performRequest<T: Decodable>(apiRequest: APIRequest, retries: Int) async throws -> T
 }
 
-final class APIService: APIServiceProtocol {
-    
+public final class APIService: APIServiceProtocol {
+
     // MARK: - Properties
-    let urlSession: URLSession
-    
+    public let urlSession: URLSession
+
     // MARK: - Properties
-    init(urlSession: URLSession = URLSession.shared) {
+    public init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession
     }
     
     // MARK: - Accessible
-    func performRequest<T: Decodable>(apiRequest: APIRequest, retries: Int = 3) async throws -> T {
-        
+    public func performRequest<T: Decodable>(apiRequest: APIRequest, retries: Int = 3) async throws -> T {
+
         guard let url = apiRequest.buildURL() else { throw APIError.invalidUrl }
         
         var request = URLRequest(url: url)
