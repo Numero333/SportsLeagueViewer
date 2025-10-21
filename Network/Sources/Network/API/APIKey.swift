@@ -8,5 +8,5 @@
 import Foundation
 
 public enum APIKey {
-    static let theSportDB = "50130162"
+    static let theSportDB = "123"
 }

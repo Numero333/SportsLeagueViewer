@@ -31,6 +31,8 @@
 		74FAD6282C56E05600A00AC6 /* GetLeagueUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAD6272C56E05600A00AC6 /* GetLeagueUseCaseTest.swift */; };
 		74FAD62A2C56E1E700A00AC6 /* GetTeamUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAD6292C56E1E700A00AC6 /* GetTeamUseCaseTest.swift */; };
 		74FAD62C2C5ACD6B00A00AC6 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FAD62B2C5ACD6B00A00AC6 /* DIContainer.swift */; };
+		862EA12B2EA7872F00F3A18A /* LeagueRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862EA12A2EA7872F00F3A18A /* LeagueRepositoryProtocol.swift */; };
+		862EA12D2EA7874400F3A18A /* TeamRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862EA12C2EA7874400F3A18A /* TeamRepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		74FAD6272C56E05600A00AC6 /* GetLeagueUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLeagueUseCaseTest.swift; sourceTree = "<group>"; };
 		74FAD6292C56E1E700A00AC6 /* GetTeamUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTeamUseCaseTest.swift; sourceTree = "<group>"; };
 		74FAD62B2C5ACD6B00A00AC6 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		862EA12A2EA7872F00F3A18A /* LeagueRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueRepositoryProtocol.swift; sourceTree = "<group>"; };
+		862EA12C2EA7874400F3A18A /* TeamRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 		74ACC38D2C50044C009AFF67 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				862EA1292EA7872100F3A18A /* Repositories */,
 				74ACC38E2C500457009AFF67 /* Models */,
 				74ACC38F2C50045F009AFF67 /* UseCases */,
 			);
@@ -347,6 +352,15 @@
 			path = UseCasesTest;
 			sourceTree = "<group>";
 		};
+		862EA1292EA7872100F3A18A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				862EA12C2EA7874400F3A18A /* TeamRepositoryProtocol.swift */,
+				862EA12A2EA7872F00F3A18A /* LeagueRepositoryProtocol.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -450,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862EA12D2EA7874400F3A18A /* TeamRepositoryProtocol.swift in Sources */,
 				74D20F562C724DE20072AE26 /* LeagueDTO.swift in Sources */,
 				74FAD6222C56BD9E00A00AC6 /* TeamMapper.swift in Sources */,
 				74D20F5A2C724E040072AE26 /* Team.swift in Sources */,
@@ -457,6 +472,7 @@
 				74ACC3A62C5005E9009AFF67 /* LeagueRepository.swift in Sources */,
 				74ACC3972C5004FF009AFF67 /* GetTeamsUseCase.swift in Sources */,
 				74D20F542C724DD50072AE26 /* TeamDTO.swift in Sources */,
+				862EA12B2EA7872F00F3A18A /* LeagueRepositoryProtocol.swift in Sources */,
 				74D20F582C724DF50072AE26 /* League.swift in Sources */,
 				74ACC3AA2C50060C009AFF67 /* TeamRepository.swift in Sources */,
 				74ACC39B2C500522009AFF67 /* GetLeagueUseCase.swift in Sources */,
